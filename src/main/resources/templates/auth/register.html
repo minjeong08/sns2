@@ -18,21 +18,27 @@
             <tr>
                 <td>아이디</td>
                 <td><input type="text" th:field="*{loginId}"
-                           placeholder="아이디를 입력해 주세요"></td>
+                           placeholder="아이디를 입력해 주세요"
+                           th:class="${#fields.hasErrors('loginId')} ? 'form-control fieldError' : 'form-control'"></td>
+                <td th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></td>
             </tr>
             <tr>
                 <td>비밀번호</td>
                 <td><input type="password" th:field="*{password}"
-                           placeholder="비밀번호를 입력해 주세요"></td>
+                           placeholder="비밀번호를 입력해 주세요"
+                           th:class="${#fields.hasErrors('password')} ? 'form-control fieldError' : 'form-control'"></td>
+                <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></td>
             </tr>
             <tr>
                 <td>비밀번호 확인</td>
                 <td><input type="password" th:field="*{checkPassword}"
-                           placeholder="비밀번호를 확인해 주세요"></td>
+                           placeholder="비밀번호를 확인해 주세요"
+                           th:class="${#fields.hasErrors('checkPassword')} ? 'form-control fieldError' : 'form-control'"></td>
+                <td th:if="${#fields.hasErrors('checkPassword')}" th:errors="*{checkPassword}"></td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="로그인">
+                    <input type="submit" value="회원가입">
                 </td>
             </tr>
         </table>

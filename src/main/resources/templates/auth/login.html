@@ -6,7 +6,10 @@
 
     <style>
         .fieldError {
-        border-color: #bd2130;
+            border-color: #bd2130;
+        }
+        .globalError {
+            color: #bd2130;
         }
     </style>
 </head>
@@ -33,6 +36,11 @@
                 <td colspan="2">
                     <input type="submit" value="로그인">
                 </td>
+            </tr>
+            <tr>
+                <td colspan="2"
+                    th:class="${#fields.hasGlobalErrors()} ? 'form-control globalError' : 'form-control'"
+                    th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></td>
             </tr>
         </table>
     </form>
